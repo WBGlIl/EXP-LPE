@@ -1,0 +1,45 @@
+﻿  64 bit Processing .\rpc.idl
+  rpc.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\oaidl.idl
+  oaidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\objidl.idl
+  objidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\unknwn.idl
+  unknwn.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\shared\wtypes.idl
+  wtypes.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\shared\wtypesbase.idl
+  wtypesbase.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\shared\basetsd.h
+  basetsd.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\shared\guiddef.h
+  guiddef.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\ocidl.idl
+  ocidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\oleidl.idl
+  oleidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\servprov.idl
+  servprov.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\urlmon.idl
+  urlmon.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\msxml.idl
+  msxml.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\oaidl.acf
+  oaidl.acf
+  64 bit Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um\ocidl.acf
+  ocidl.acf
+  ALPC-TaskSched-LPE.cpp
+ALPC-TaskSched-LPE.cpp(123): warning C4995: “IXpsPrintJob”: 名称被标记为 #pragma deprecated
+ALPC-TaskSched-LPE.cpp(125): warning C4995: “StartXpsPrintJob”: 名称被标记为 #pragma deprecated
+  Hardlink.cpp
+Hardlink.cpp(87): warning C4267: “=”: 从“size_t”转换到“ULONG”，可能丢失数据
+Hardlink.cpp(97): warning C4267: “参数”: 从“size_t”转换到“ULONG”，可能丢失数据
+  stdafx.cpp
+  rpc_c.c
+  正在生成代码
+f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(113): warning C4715: “Tasks”: 不是所有的控件路径都返回值
+f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(107): warning C4172: 返回局部变量或临时变量的地址: BeginPath
+f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(247): warning C4715: “mainf”: 不是所有的控件路径都返回值
+  All 306 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  ALPC-TaskSched-LPE.vcxproj -> F:\VS工程\EXP-LPE\x64\Release\ALPC-TaskSched-LPE.exe
