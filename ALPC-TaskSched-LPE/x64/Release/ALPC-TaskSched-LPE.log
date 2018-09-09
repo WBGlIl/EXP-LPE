@@ -37,9 +37,9 @@ Hardlink.cpp(97): warning C4267: “参数”: 从“size_t”转换到“ULONG�
   stdafx.cpp
   rpc_c.c
   正在生成代码
+f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(211): warning C4715: “mainf”: 不是所有的控件路径都返回值
 f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(113): warning C4715: “Tasks”: 不是所有的控件路径都返回值
 f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(107): warning C4172: 返回局部变量或临时变量的地址: BeginPath
-f:\vs工程\exp-lpe\alpc-tasksched-lpe\alpc-tasksched-lpe.cpp(247): warning C4715: “mainf”: 不是所有的控件路径都返回值
   All 306 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
   ALPC-TaskSched-LPE.vcxproj -> F:\VS工程\EXP-LPE\x64\Release\ALPC-TaskSched-LPE.exe

